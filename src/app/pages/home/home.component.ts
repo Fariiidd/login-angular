@@ -16,13 +16,8 @@ export class HomeComponent implements OnInit {
   }
 
   salir(){
-    if(!this.auth.estaAutenticado){
-      return true;
-    }else{
-      this.auth.logOut();
-      this.router.navigateByUrl('/login');
-      return false;
-    }
+    this.auth.logOut();
+    this.router.navigateByUrl('/login');
   }
 
 
